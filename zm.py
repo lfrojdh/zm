@@ -21,7 +21,7 @@ if __name__ == "__main__":
         print("--rebuild\trebuild everything")
         print("--purge\tremove all stored data")
         print("--make\tgenerate template makefile")
-        print("--list\tgenerate template makefile")
+        print("--list\tlist template makefile")
         sys.exit(0)
         
     if len(sys.argv) == 1:
