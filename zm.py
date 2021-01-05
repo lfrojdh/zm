@@ -54,6 +54,12 @@ if __name__ == "__main__":
 
             # found c-file argslist            
             if len(l):
+
+                # only add rules which exit != 0
+                r = subprocess.run(CC + " " + " ".join(sys.argv[1:]), shell=True)
+                if r.returncode:
+                    sys.exit(r.returncode)
+
                 db[(l[0],l[0].replace(".c", ".o"))] = sys.argv[1:]
 
     if db:
